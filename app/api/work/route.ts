@@ -68,9 +68,13 @@ export async function POST(req: Request) {
 
   try {
     const response = await fetch(GATEWAY_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'x-api-key': 'vvbam988',
+  },
+  body: JSON.stringify({...}),
+})
         model: MODEL_NAME,
         messages: [
           { role: 'system', content: SYSTEM_PROMPT },
