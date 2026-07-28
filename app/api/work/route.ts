@@ -73,17 +73,16 @@ export async function POST(req: Request) {
     'Content-Type': 'application/json',
     'x-api-key': 'vvbam988',
   },
-  body: JSON.stringify({...}),
-})
-        model: MODEL_NAME,
-        messages: [
-          { role: 'system', content: SYSTEM_PROMPT },
-          { role: 'user', content: buildUserMessage(validBody) },
-        ],
-        temperature: 0.2,
-      }),
-      signal: controller.signal,
-    });
+  body: JSON.stringify({
+    model: MODEL_NAME,
+    messages: [
+      { role: 'system', content: SYSTEM_PROMPT },
+      { role: 'user', content: buildUserMessage(validBody) },
+    ],
+    temperature: 0.2,
+  }),
+  signal: controller.signal,
+});
 
     if (!response.ok) {
       return NextResponse.json(
